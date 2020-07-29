@@ -1,0 +1,28 @@
+\ProvidesPackage{mainstyle}
+
+\usepackage{pgfplots}   % plots
+\pgfplotsset{compat=1.16}
+
+% other packages
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage[a4paper, total={6in, 8in}]{geometry}
+% \usepackage{hyperref}
+\usepackage[hidelinks]{hyperref} 
+\usepackage{url}
+\usepackage{array}
+\hypersetup{
+  colorlinks=true,
+  linktoc=all,     %set to all if you want both sections and subsections linked
+    linkcolor=blue,
+}  
+
+%encoding and languages
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+
+%Can modify these parameters to biblatex - this would allow changing how citations show, for eg.
+\usepackage[backend=bibtex, style=alphabetic, sorting=ynt, doi=false, url=false, isbn=false, block=ragged]{biblatex}
+
+%For name references of labels
+\usepackage{nameref}

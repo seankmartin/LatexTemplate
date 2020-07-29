@@ -1,0 +1,42 @@
+\documentclass[11pt, a4paper]{article}
+  
+\setlength {\marginparwidth }{2cm}
+\usepackage{todostyle}
+\usepackage{mathstyle}
+\usepackage{mainstyle}
+
+\addbibresource{references.bib}
+
+%Remove any fields you don't want printed
+\AtEveryBibitem{%
+	\clearfield{address}%
+ }
+
+\graphicspath{{../assets/}}
+
+% Set up the layout of the document here
+\begin{document}
+
+  \section{Abstract}
+  \label{section:abstract}
+  \input{sections/abstract.tex}
+
+  \newpage
+  \section{Introduction}
+  \label{section:intro}
+  \input{sections/introduction.tex}
+
+  \section{Results}
+  \label{section:results}
+  \input{sections/results.tex}
+
+  \section{Discussion}
+  \label{section:discuss}
+  \input{sections/discussion.tex}
+
+  \printbibliography[heading=bibintoc]
+
+  \newpage
+  \listoftodos[Notes]
+
+\end{document}

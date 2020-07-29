@@ -1,0 +1,55 @@
+\ProvidesPackage{mathstyle}
+
+% math packages
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{amssymb}    % Math symbols such as \mathbb
+\usepackage{amsthm}
+
+\usepackage[sc,osf]{mathpazo}   % With old-style figures and real smallcaps.
+\linespread{1.025}              % Palatino leads a little more leading
+
+% proper inline math display, adjust height for symbols like \sum
+\everymath{\displaystyle}
+    
+% define tags for math use..
+\theoremstyle{plain}% default
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}{Corollary}[theorem]
+
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}[section]
+\newtheorem{proposition}{Proposition}[defn]
+\newtheorem{exmp}{Example}[section]
+
+\theoremstyle{remark}
+\newtheorem*{rem}{Remark}
+\newtheorem*{note}{Note}
+\newtheorem{case}{Case}
+
+% Gives begin{solution} same formating as \begin{proof}
+\newenvironment{solution}
+{\begin{proof}[Solution]}
+{\end{proof}}
+
+
+%running fraction with slash - requires math mode.
+\newcommand*\rfrac[2]{{}^{#1}\!/_{#2}}
+%shortcut to mathbb
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\I}{\mathbb{I}}
+% color highlighting
+\newcommand{\hilight}[1]{\colorbox{yellow}{#1}}
+
+\newcommand{\icol}[1]{% inline column vector
+\left(\begin{smallmatrix}#1\end{smallmatrix}\right)%
+  }
+  
+  \newcommand{\irow}[1]{% inline row vector
+\begin{smallmatrix}(#1)\end{smallmatrix}%
+  }
+  
+  \newenvironment{conditions}
+  {\par\vspace{\abovedisplayskip}\noindent\begin{tabular}{>{$}l<{$} @{${}={}$} l}}
+  {\end{tabular}\par\vspace{\belowdisplayskip}}
